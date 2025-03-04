@@ -4,7 +4,8 @@ tardis.telekom.de/namespace: {{ .Release.Namespace | default "Undefined" | quote
 tardis.telekom.de/product: {{ .Values.global.product | default .Chart.Name | quote }}
 tardis.telekom.de/team: {{ .Values.global.team | default "hyperion" | quote }}
 tardis.telekom.de/zone: {{ .Values.global.zone | default "Undefined" | quote }}
-tardis.telekom.de/environment: {{ include "status-monitor.environment" . }}
+#That's blows up our pipeline
+# tardis.telekom.de/environment: {{ include "status-monitor.environment" . }}
 {{- end -}}
 
 {{- define "status-monitor.environment" -}}
